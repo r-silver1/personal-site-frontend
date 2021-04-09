@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class ResumeComponent implements OnInit {
-  eduArr:any = [
+  eduArr: any = [
     {
       title: "VENTURA COMMUNITY COLLEGE DISTRICT",
       description: "Foundational classes in Object Oriented Programming and electives",
@@ -22,7 +22,7 @@ export class ResumeComponent implements OnInit {
     }
   ]
 
-  skillsArr:any = [
+  skillsArr: any = [
     {
       title: "CSE 101: Data Structures and Algorithms",
       description: "Algorithms, sorting and efficiency in C/C++",
@@ -60,7 +60,7 @@ export class ResumeComponent implements OnInit {
     },
   ];
 
-  jobArr:any = [
+  jobArr: any = [
     {
       employer: "Tata Consultancy Services",
       location: "Thousand Oaks, California",
@@ -87,10 +87,37 @@ export class ResumeComponent implements OnInit {
     },
   ]
 
+  otherSkill: any = [
+    {
+      title: "NodeJS",
+      description: "Experience setting up a NodeJS enviornment in Ubuntu and creating apps using Express and EJS templates"
+    },
+    {
+      title: "MongoDB",
+      description: `Experience setting up backend servers using MongoDB in connection with NodeJS`
+    },
+    {
+      title: "JDBC/Oracle",
+      description: `Experience using Java Databases with Oracle/SQL to serve dynamic web pages using Java servlets`
+      
+    },
+    {
+      title: "Visual Basic",
+      description: `Experience MS Visual Basic to make business-oriented apps interfacing with Excel`
+      
+    },
+    {
+      title: "Adobe apps",
+      description: `Experience using Photoshop, Illustrator and After effects for art and logo design`
+    }
+ 
+  ];
+
+
   constructor() { }
 
   ngOnInit(): void {
-    
+
   }
 
 }

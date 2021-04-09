@@ -82,5 +82,22 @@
         </div>
     </div>
 
+    <div class="card mx-auto my-4 shadow text-left" style="background-color: rgba(255, 255, 255, 0.842)">
+        <div class="container p-2">
+            <h3 style="font-style: italic">
+                OTHER SKILLS
+            </h3>
+            <hr>
+            <div class="row my-1 mx-auto" style="width: 100%" *ngFor="let skill of otherSkill">
+                <div class="col col-9">
+                    <h4 style="color: grey; font-size: calc(100%)">{{skill.title}}</h4>
+                    <p class="lead  text-left" style="font-size: calc(90%)">
+                        {{skill.description}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 </div>
