@@ -7,6 +7,21 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class ResumeComponent implements OnInit {
+  eduArr:any = [
+    {
+      title: "VENTURA COMMUNITY COLLEGE DISTRICT",
+      description: "Foundational classes in Object Oriented Programming and electives",
+      years: "2017-2018"
+    },
+    {
+      title: "UC Santa Cruz Baskin SOE",
+      description: `Technology Information Management B.S./Computer Science Minor class of
+      2021 University of California, Santa Cruz. Non-contiguous. GPA 3.4 cumulative; Dean's 
+      Honors Summer '19, Winter '20, Spring '20`,
+      years: "2011-2020"
+    }
+  ]
+
   skillsArr:any = [
     {
       title: "CSE 101: Data Structures and Algorithms",
@@ -44,6 +59,34 @@ export class ResumeComponent implements OnInit {
       grade: 'A/A-',
     },
   ];
+
+  jobArr:any = [
+    {
+      employer: "Tata Consultancy Services",
+      location: "Thousand Oaks, California",
+      description: "Software Engineering",
+      years: "Jan 2021-Present"
+    },
+    {
+      employer: "Many Mansions",
+      location: "Thousand Oaks, California",
+      description: "Volunteer tutor for non-profit org helping K-12 students with math (mainly)",
+      years: "Feb-Apr 2019"
+    },
+    {
+      employer: "Pipeline Santa Cruz",
+      location: "Santa Cruz, CA",
+      description: "Cashier/sales",
+      years: "Oct 2015-Jun 2016"
+    },
+    {
+      employer: "Chipotle Mexican Grill",
+      location: "Santa Cruz, CA",
+      description: "Cashier/chip fryer",
+      years: "Feb-Jul 2014"
+    },
+  ]
+
   constructor() { }
 
   ngOnInit(): void {

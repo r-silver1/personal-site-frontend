@@ -1,4 +1,4 @@
-<div class="col col-10 shadow my-2 border mx-auto"
+<div class="col col-11 shadow my-2 border mx-auto"
     style="border-radius: 5px; background-color: rgba(52, 159, 221, 0.582);">
     <h1 class="p-2 m-2 jumbotron mx-auto text-center"
         style="background-color: rgba(255, 255, 255, 0.842); font-style: italic; font-weight: bold">
@@ -19,44 +19,26 @@
             
         </div>
     <hr>
+   
+    
     <div class="card mx-auto my-4 shadow text-left" style="background-color: rgba(255, 255, 255, 0.842)">
         <div class="container p-2">
             <h3 style="font-style: italic">
                 EDUCATION
             </h3>
             <hr>
-            <div class="row my-1 mx-auto" style="width: 100%">
-                <div class="col col-8">
-                    <h4 style="color: grey;  font-size: calc(100%)">VENTURA COMMUNITY COLLEGE DISTRICT</h4>
-                    <p class="lead text-sm-center text-lg-left" style="font-size: calc(80%)">
-                        Foundational classes in Object Oriented Programming and electives
-
+            <div class="row my-1 mx-auto" style="width: 100%" *ngFor="let ed of eduArr">
+                <div class="col col-9">
+                    <h4 style="color: grey; font-size: calc(100%)">{{ed.title}}</h4>
+                    <p class="lead text-left" style="font-size: calc(90%)">
+                        {{ed.description}}
                     </p>
                 </div>
-                <div class="col col-4">
-                    <p class="lead text-right" style=" font-size: calc(80%)">2017-2018</p>
+                <div class="col col-3">
+                    <p class="lead text-right" style=" font-size: calc(90%)">{{ed.years}}</p>
                 </div>
             </div>
-
-            <div class="row my-1 mx-auto" style="width: 100%">
-                <div class="col col-8">
-                    <h4 style="color: grey;  font-size: calc(80%)">UC Santa Cruz Baskin SOE</h4>
-                    <p class="lead text-sm-center text-lg-left" style="font-size: calc(100%)">
-                        Technology Information Management B.S./Computer Science Minor class of
-                        2021 University of California, Santa Cruz. Non-contiguous <br><br> GPA 3.4 cumulative; Dean's 
-                        Honors Summer '19, Winter '20, Spring '20
-
-                    </p>
-                </div>
-                <div class="col col-4">
-                    <p class="lead text-right" style=" font-size: calc(80%)">2011-2021</p>
-                </div>
-            </div>
-            
         </div>
-
-        
-
     </div>
 
     <div class="card mx-auto my-4 shadow text-left" style="background-color: rgba(255, 255, 255, 0.842)">
@@ -67,22 +49,37 @@
             <hr>
             <div class="row my-1 mx-auto" style="width: 100%" *ngFor="let skill of skillsArr">
                 <div class="col col-9">
-                    <h4 style="color: grey; font-size: calc(80%)">{{skill.title}}</h4>
-                    <p class="lead text-sm-center text-lg-left" style="font-size: calc(100%)">
+                    <h4 style="color: grey; font-size: calc(100%)">{{skill.title}}</h4>
+                    <p class="lead  text-left" style="font-size: calc(90%)">
                         {{skill.description}}
                     </p>
                 </div>
                 <div class="col col-3">
-                    <p class="lead text-right" style=" font-size: calc(80%)">{{skill.grade}}</p>
+                    <p class="lead text-right" style=" font-size: calc(90%)">{{skill.grade}}</p>
                 </div>
             </div>
-
-            
-            
         </div>
+    </div>
 
-        
-
+    <div class="card mx-auto my-4 shadow text-left" style="background-color: rgba(255, 255, 255, 0.842)">
+        <div class="container p-2">
+            <h3 style="font-style: italic">
+                WORK HISTORY
+            </h3>
+            <hr>
+            <div class="row my-1 mx-auto" style="width: 100%" *ngFor="let job of jobArr">
+                <div class="col col-9">
+                    <h4 style="color: grey; font-size: calc(100%)">{{job.employer}}</h4>
+                    <h5 style="color: rgba(128, 128, 128, 0.815); font-size: calc(95%)">{{job.location}}</h5>
+                    <p class="lead  text-left" style="font-size: calc(90%)">
+                        {{job.description}}
+                    </p>
+                </div>
+                <div class="col col-3">
+                    <p class="lead text-right" style=" font-size: calc(80%)">{{job.years}}</p>
+                </div>
+            </div>
+        </div>
     </div>
 
 
