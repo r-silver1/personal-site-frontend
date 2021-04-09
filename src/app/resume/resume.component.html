@@ -1,0 +1,89 @@
+<div class="col col-10 shadow my-2 border mx-auto"
+    style="border-radius: 5px; background-color: rgba(52, 159, 221, 0.582);">
+    <h1 class="p-2 m-2 jumbotron mx-auto text-center"
+        style="background-color: rgba(255, 255, 255, 0.842); font-style: italic; font-weight: bold">
+        RESUME</h1>
+        <div class="container pt-2 pb-0 col col-12">
+            <section class="mb-3 " style="opacity: 75%;" align="center">
+                
+                <!-- Linkedin -->
+                <a class="btn btn-outline-light btn-floating m-3 shadow bg-light" target="_blank"
+                    href="https://github.com/r-silver1" role="button" style="border-radius: 3vw;"><img style="max-height: 5vmax"
+                        src="https://img.icons8.com/nolan/64/github.png" /></a>
+                <!-- Github-->
+                <a class="btn btn-outline-light btn-floating m-3 shadow bg-light" target="_blank"
+                    href="https://www.linkedin.com/in/robert-elliot-silver/" role="button" style="border-radius: 3vw;"><img style="max-height: 5vmax"
+                        src="https://img.icons8.com/cute-clipart/64/000000/linkedin.png" /></a>
+    
+            </section>
+            
+        </div>
+    <hr>
+    <div class="card mx-auto my-4 shadow text-left" style="background-color: rgba(255, 255, 255, 0.842)">
+        <div class="container p-2">
+            <h3 style="font-style: italic">
+                EDUCATION
+            </h3>
+            <hr>
+            <div class="row my-1 mx-auto" style="width: 100%">
+                <div class="col col-8">
+                    <h4 style="color: grey;  font-size: calc(100%)">VENTURA COMMUNITY COLLEGE DISTRICT</h4>
+                    <p class="lead text-sm-center text-lg-left" style="font-size: calc(80%)">
+                        Foundational classes in Object Oriented Programming and electives
+
+                    </p>
+                </div>
+                <div class="col col-4">
+                    <p class="lead text-right" style=" font-size: calc(80%)">2017-2018</p>
+                </div>
+            </div>
+
+            <div class="row my-1 mx-auto" style="width: 100%">
+                <div class="col col-8">
+                    <h4 style="color: grey;  font-size: calc(80%)">UC Santa Cruz Baskin SOE</h4>
+                    <p class="lead text-sm-center text-lg-left" style="font-size: calc(100%)">
+                        Technology Information Management B.S./Computer Science Minor class of
+                        2021 University of California, Santa Cruz. Non-contiguous <br><br> GPA 3.4 cumulative; Dean's 
+                        Honors Summer '19, Winter '20, Spring '20
+
+                    </p>
+                </div>
+                <div class="col col-4">
+                    <p class="lead text-right" style=" font-size: calc(80%)">2011-2021</p>
+                </div>
+            </div>
+            
+        </div>
+
+        
+
+    </div>
+
+    <div class="card mx-auto my-4 shadow text-left" style="background-color: rgba(255, 255, 255, 0.842)">
+        <div class="container p-2">
+            <h3 style="font-style: italic">
+                SELECTED COURSE HISTORY
+            </h3>
+            <hr>
+            <div class="row my-1 mx-auto" style="width: 100%" *ngFor="let skill of skillsArr">
+                <div class="col col-9">
+                    <h4 style="color: grey; font-size: calc(80%)">{{skill.title}}</h4>
+                    <p class="lead text-sm-center text-lg-left" style="font-size: calc(100%)">
+                        {{skill.description}}
+                    </p>
+                </div>
+                <div class="col col-3">
+                    <p class="lead text-right" style=" font-size: calc(80%)">{{skill.grade}}</p>
+                </div>
+            </div>
+
+            
+            
+        </div>
+
+        
+
+    </div>
+
+
+</div>
