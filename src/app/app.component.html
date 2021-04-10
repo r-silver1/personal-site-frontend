@@ -2,11 +2,11 @@
     <style>
         /* Set a background image by replacing the URL below */
         html {
-            height: 100vh;
+            /* height: 100vh; */
         }
 
         body {
-            min-height: 100vh;
+            /* min-height: 100vh; */
 
             background: url('assets/287_abstract-blue-business-technology-colorful-wave-illustration-[Converted].jpg') no-repeat center center fixed;
             -webkit-background-size: cover;
@@ -17,7 +17,7 @@
     </style>
 </head>
 
-<body class="pb-1">
+<body class="pb-1" [ngStyle]="{'min-height.px': winHeight}">
     <app-header></app-header>
     <app-sidebar></app-sidebar>
     <a style="visibility: hidden;" href="https://www.vecteezy.com/free-vector/abstract-background">Abstract Background
