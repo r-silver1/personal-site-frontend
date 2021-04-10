@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { ResumeComponent } from './resume/resume.component';
 import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,6 +18,7 @@ import { SidebarComponent } from './shared/components/sidebar/sidebar.component'
     HomeComponent,
     ResumeComponent,
     SidebarComponent
+    
   ],
   imports: [
     BrowserModule,

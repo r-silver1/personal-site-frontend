@@ -1,1 +1,37 @@
-<p>sidebar works!</p>
+<!--Navbar-->
+
+<nav class="shadow" style=" background-color: rgba(37, 121, 170, 0.582);">
+
+
+
+    <!-- Collapse button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+        data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false"
+        aria-label="Toggle navigation"><span  class="dark-blue-text">
+            <img style="height: 3vh" src="https://img.icons8.com/ios/100/000000/menu--v1.png" />
+
+        </span></button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse col col-3 shadow" id="navbarSupportedContent1" 
+    style="background-color: rgba(52, 159, 221, 0.465); position: absolute; z-index: 100; border-radius: 0px 0px 30px 0px; border-right: 1px solid white; border-bottom: 1px solid white;">
+
+        <!-- Links -->
+        <ul class="navbar-nav mr-auto" [ngStyle]="{'min-height.px': winHeight}">
+            <li class="nav-item active" >
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+            </li>
+        </ul>
+        <!-- Links -->
+
+    </div>
+    <!-- Collapsible content -->
+
+</nav>
+<!--/.Navbar-->
