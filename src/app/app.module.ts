@@ -9,6 +9,7 @@ import { HeaderComponent } from './shared/components/header/header.component';
 import { HomeComponent } from './home/home.component';
 import { ResumeComponent } from './resume/resume.component';
 import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
+import { ProjectsComponent } from './projects/projects.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { SidebarComponent } from './shared/components/sidebar/sidebar.component'
     FooterComponent,
     HomeComponent,
     ResumeComponent,
-    SidebarComponent
+    SidebarComponent,
+    ProjectsComponent
     
   ],
   imports: [

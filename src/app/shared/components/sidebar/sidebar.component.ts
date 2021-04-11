@@ -38,4 +38,12 @@ export class SidebarComponent implements OnInit {
     }
   }
 
+  mouseEnter(){
+    document.getElementById("projNavbar")?.setAttribute("class", "in navbar-dark");
+  }
+
+  mouseLeave(){
+    document.getElementById("projNavbar")?.setAttribute("class", "collapse navbar-dark");
+  }
+
 }
