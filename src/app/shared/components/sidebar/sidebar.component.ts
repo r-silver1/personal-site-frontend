@@ -6,44 +6,66 @@ import { Component, HostListener, OnInit } from '@angular/core';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
-  colClass:any = "collapse navbar-dark navbar-collapse col col-3 shadow";
-  fontSize:any = 5;
-  constructor() { }
 
+  fontSize: any = 5;
   //set height for sidebar https://stackoverflow.com/a/45350792/10432596
   //https://stackoverflow.com/questions/58414395/can-i-adjust-the-displayed-columns-of-a-mat-table-depending-on-screen-size
   public winHeight: any;
+
+  constructor() { }
+
   ngOnInit(): void {
-    this.winHeight = .8*window.innerHeight;
-    if(window.innerWidth < 600){
-      this.colClass = "collapse navbar-dark navbar-collapse text-left col col-5 shadow";
-      this.fontSize = 7.5;
-    }else{
-      this.fontSize = 3;
-    }
-    
+    this.fixClasses();
+
   }
 
-  
 
   @HostListener('window:resize', ['$event'])
-  onResize(event:any) {
-    this.winHeight = .8*window.innerHeight;
-    if(window.innerWidth < 600){
-      this.colClass = "collapse navbar-dark navbar-collapse text-left col col-5 shadow";
+  onResize(event: any) {
+    this.fixClasses();
+  }
+
+  fixClasses() {
+    this.winHeight = .8 * window.innerHeight;
+    if (window.innerWidth < 600) {
+
+      this.swapClasses("mainNavbar", "col-3", "col-5");
+      this.swapClasses("mainNavbar", "text-center", "text-left");
       this.fontSize = 7.5;
-    }else{
+    } else {
       this.fontSize = 3;
-      this.colClass = "collapse navbar-dark navbar-collapse text-center col col-3 shadow";
+      this.swapClasses("mainNavbar", "col-5", "col-3");
+      this.swapClasses("mainNavbar", "text-left", "text-center");
     }
   }
 
-  mouseEnter(){
-    document.getElementById("projNavbar")?.setAttribute("class", "in navbar-dark");
+
+  private swapClasses(input: string, swapOld: string, swapNew: string) {
+    let classArr: string[] | undefined = document.getElementById(input)?.getAttribute("class")?.split(' ');
+    var inIndx = classArr!.indexOf(swapNew);
+    if (inIndx < 0) {
+      classArr?.push(swapNew);
+    }
+    inIndx = classArr!.indexOf(swapOld);
+    if (inIndx > -1) {
+      classArr?.splice(inIndx, 1);
+    }
+
+    document.getElementById(input)?.setAttribute('class', classArr!.join(" "));
   }
 
-  mouseLeave(){
-    document.getElementById("projNavbar")?.setAttribute("class", "collapse navbar-dark");
+  closeAll(arr: string[]) {
+    arr.forEach((input) => {
+      this.swapClasses(input, "in", "collapse");
+    })
+  }
+
+  mouseEnter(input: string) {
+    this.swapClasses(input, "collapse", "in");
+  }
+
+  mouseLeave(input: string) {
+    this.swapClasses(input, "in", "collapse");
   }
 
 }

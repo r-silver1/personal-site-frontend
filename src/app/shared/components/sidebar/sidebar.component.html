@@ -1,11 +1,11 @@
 <!--Navbar-->
 
-<nav class="shadow" style=" background-color: rgba(37, 121, 170, 0.582);">
+<nav class="shadow" (mouseleave)="mouseLeave('mainNavbar')" style=" background-color: rgba(37, 121, 170, 0.582);">
 
 
 
     <!-- Collapse button -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar"
+    <button class="navbar-toggler" (mouseenter)="mouseEnter('mainNavbar')" type="button" data-toggle="collapse" data-target="#mainNavbar"
         aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation"><span>
             <img style="height: 3vh" src="https://img.icons8.com/ios/100/000000/menu--v1.png" />
             <a style="visibility: hidden; z-index: -20" href="https://icons8.com/icon/3096/menu">Menu icon by Icons8</a>
@@ -13,40 +13,40 @@
         </span></button>
 
     <!-- Collapsible content -->
-    <div [ngClass]=colClass id="mainNavbar"
+    <div class="collapse navbar-dark navbar-collapse col col-3 shadow" id="mainNavbar" (mouseleave)="mouseLeave('mainNavbar')"
         style="background-color: rgba(52, 159, 221, 0.849); position: absolute; z-index: 100; border-radius: 0px 0px 30px 0px; border-right: 1px solid white; border-bottom: 1px solid white;">
 
         <!-- Links -->
         <ul class="navbar-nav px-auto mx-auto"  [ngStyle]="{'min-height.px': winHeight}">
-            <li class="mx-auto nav-item col-12" (mouseenter)="mouseLeave()" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+            <li class="mx-auto nav-item col-12" (mouseenter)="mouseLeave('projNavbar')" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
                 <a class="text text-left nav-link" [ngStyle]="{'font-size.vw': fontSize, 'font-style': 'italic'}"
-                    routerLink="/">Home</a>
+                    routerLink="/" (click)="closeAll(['projNavbar', 'mainNavbar'])">Home</a>
 
             </li>
             
-            <button class="navbar-toggler" (mouseenter)="mouseEnter()"  type="button" data-toggle="collapse" data-target="#projNavbar"
+            <button class="navbar-toggler" (mouseenter)="mouseEnter('projNavbar')"  type="button" data-toggle="collapse" data-target="#projNavbar"
                 aria-controls="projNavbar" aria-expanded="false" aria-label="Toggle navigation" style="border: none">
                 <span class="nav-item text text-left nav-link" [ngStyle]="{'font-size.vw': fontSize, 'font-style': 'italic'}"
                 routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
                     <a class="text text-left nav-link" [ngStyle]="{'font-size.vw': fontSize, 'font-style': 'italic'}"
-                    routerLink="/projects">Projects</a>
+                    routerLink="/projects" (click)="closeAll(['projNavbar', 'mainNavbar'])">Projects</a>
                 </span>
             </button>
-            <div id="projNavbar" #projNavbar (mouseleave)="mouseLeave()" class="collapse navbar-dark">
+            <div id="projNavbar" #projNavbar (mouseleave)="mouseLeave('projNavbar')" class="collapse navbar-dark">
                 <ul class="navbar-nav">
-                    <li class="mx-auto nav-item col-12" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
-                        <a class="text text-center nav-link" [ngStyle]="{'font-size.vw': fontSize*.65, 'font-style': 'italic'}"
-                            routerLink="/">Project1</a>
+                    <li class="nav-item col-8 ml-auto" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+                        <a class="text text-left nav-link" [ngStyle]="{'font-size.vw': fontSize*.65, 'font-style': 'italic'}"
+                            routerLink="/" (click)="closeAll(['projNavbar', 'mainNavbar'])">Graphics</a>
         
                     </li>   
-                    <li class="mx-auto nav-item col-12" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
-                        <a class="text text-center nav-link" [ngStyle]="{'font-size.vw': fontSize*.65, 'font-style': 'italic'}"
-                            routerLink="/resume">Project2</a>
+                    <li class="nav-item col-8 ml-auto" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+                        <a class="text text-left nav-link" [ngStyle]="{'font-size.vw': fontSize*.65, 'font-style': 'italic'}"
+                            routerLink="/resume" (click)="closeAll(['projNavbar', 'mainNavbar'])">AI/ML</a>
         
                     </li>   
-                    <li class="mx-auto nav-item col-12" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
-                        <a class="text text-center nav-link" [ngStyle]="{'font-size.vw': fontSize*.65, 'font-style': 'italic'}"
-                            routerLink="/resume">Project3</a>
+                    <li class="nav-item col-8 ml-auto" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+                        <a class="text text-left nav-link" [ngStyle]="{'font-size.vw': fontSize*.65, 'font-style': 'italic'}"
+                            routerLink="/resume" (click)="closeAll(['projNavbar', 'mainNavbar'])">Web</a>
         
                     </li>   
                 </ul>
@@ -54,7 +54,7 @@
             
             <li class="mx-auto nav-item col-12" [ngStyle]="{'font-size.vw': fontSize, 'font-style': 'italic'}">
                 <a class="text text-left nav-link" [ngStyle]="{'font-size.vw': fontSize, 'font-style': 'italic'}"
-                    routerLink="/resume">Resume</a>
+                    routerLink="/resume" (click)="closeAll(['projNavbar', 'mainNavbar'])">Resume</a>
 
             </li>
             
