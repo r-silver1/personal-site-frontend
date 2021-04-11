@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { ResumeComponent } from './resume/resume.component';
 import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { GraphicsComponent } from './graphics/graphics.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { ProjectsComponent } from './projects/projects.component';
     HomeComponent,
     ResumeComponent,
     SidebarComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    GraphicsComponent
     
   ],
   imports: [
