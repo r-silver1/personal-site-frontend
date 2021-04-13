@@ -4,6 +4,8 @@ import { HomeComponent } from './home/home.component';
 import { ResumeComponent } from './resume/resume.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { GraphicsComponent } from './graphics/graphics.component';
+import { AiPortfolioComponent } from './ai-portfolio/ai-portfolio.component';
+import { WebPortfolioComponent } from './web-portfolio/web-portfolio.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent, pathMatch: 'full' },
@@ -12,7 +14,9 @@ const routes: Routes = [
     path: 'projects', 
     children: [
       {path: '', component: ProjectsComponent, pathMatch: 'full'},
-      {path: 'graphics', component: GraphicsComponent}
+      {path: 'graphics', component: GraphicsComponent},
+      {path: 'ai', component: AiPortfolioComponent},
+      {path: 'web', component: WebPortfolioComponent}
     ]
   },
   

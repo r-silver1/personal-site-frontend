@@ -11,6 +11,8 @@ import { ResumeComponent } from './resume/resume.component';
 import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { GraphicsComponent } from './graphics/graphics.component';
+import { AiPortfolioComponent } from './ai-portfolio/ai-portfolio.component';
+import { WebPortfolioComponent } from './web-portfolio/web-portfolio.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { GraphicsComponent } from './graphics/graphics.component';
     ResumeComponent,
     SidebarComponent,
     ProjectsComponent,
-    GraphicsComponent
+    GraphicsComponent,
+    AiPortfolioComponent,
+    WebPortfolioComponent
     
   ],
   imports: [
