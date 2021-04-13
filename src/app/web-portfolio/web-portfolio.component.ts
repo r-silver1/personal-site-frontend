@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WebPortfolioComponent implements OnInit {
 
+  nav(link:string){
+    window.open(link, "_blank")
+  }
+
   constructor() { }
 
   ngOnInit(): void {

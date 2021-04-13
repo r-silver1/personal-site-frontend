@@ -6,6 +6,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { GraphicsComponent } from './graphics/graphics.component';
 import { AiPortfolioComponent } from './ai-portfolio/ai-portfolio.component';
 import { WebPortfolioComponent } from './web-portfolio/web-portfolio.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent, pathMatch: 'full' },
@@ -20,7 +21,7 @@ const routes: Routes = [
     ]
   },
   
-  {path: '**', component: HomeComponent}
+  {path: '**', component: NotFoundComponent}
   
 ];
 

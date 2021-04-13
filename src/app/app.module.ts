@@ -13,6 +13,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { GraphicsComponent } from './graphics/graphics.component';
 import { AiPortfolioComponent } from './ai-portfolio/ai-portfolio.component';
 import { WebPortfolioComponent } from './web-portfolio/web-portfolio.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { WebPortfolioComponent } from './web-portfolio/web-portfolio.component';
     ProjectsComponent,
     GraphicsComponent,
     AiPortfolioComponent,
-    WebPortfolioComponent
+    WebPortfolioComponent,
+    NotFoundComponent
     
   ],
   imports: [

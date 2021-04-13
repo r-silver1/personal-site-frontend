@@ -11,6 +11,7 @@ export class SidebarComponent implements OnInit {
   //set height for sidebar https://stackoverflow.com/a/45350792/10432596
   //https://stackoverflow.com/questions/58414395/can-i-adjust-the-displayed-columns-of-a-mat-table-depending-on-screen-size
   public winHeight: any;
+  public winWidth: any;
 
   constructor() { }
 
@@ -27,18 +28,20 @@ export class SidebarComponent implements OnInit {
 
   fixClasses() {
     this.winHeight = .8 * window.innerHeight;
+    this.winWidth = .8 * window.innerWidth;
     if (window.innerWidth < 600) {
-
-      this.swapClasses("mainNavbar", "col-3", "col-5");
       this.swapClasses("mainNavbar", "text-center", "text-left");
+
       this.fontSize = 7.5;
     } else {
       this.fontSize = 3;
-      this.swapClasses("mainNavbar", "col-5", "col-3");
       this.swapClasses("mainNavbar", "text-left", "text-center");
     }
   }
 
+  public max(numA: number, numB: number) {
+    return Math.max(numA, numB);
+  }
 
   private swapClasses(input: string, swapOld: string, swapNew: string) {
     let classArr: string[] | undefined = document.getElementById(input)?.getAttribute("class")?.split(' ');
@@ -57,15 +60,24 @@ export class SidebarComponent implements OnInit {
   closeAll(arr: string[]) {
     arr.forEach((input) => {
       this.swapClasses(input, "in", "collapse");
+
     })
   }
 
   mouseEnter(input: string) {
     this.swapClasses(input, "collapse", "in");
+    if (input == "mainNavbar") {
+      this.swapClasses("topNav", "shadow", "");
+    }
+
   }
 
   mouseLeave(input: string) {
     this.swapClasses(input, "in", "collapse");
+    if (input == "mainNavbar") {
+      this.swapClasses("topNav", "", "shadow");
+    }
+
   }
 
 }
