@@ -7,10 +7,12 @@ import { GraphicsComponent } from './graphics/graphics.component';
 import { AiPortfolioComponent } from './ai-portfolio/ai-portfolio.component';
 import { WebPortfolioComponent } from './web-portfolio/web-portfolio.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { GuestsComponent } from './guests/guests.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent, pathMatch: 'full' },
   {path: 'resume', component: ResumeComponent},
+  {path: 'guest-book', component: GuestsComponent},
   {
     path: 'projects', 
     children: [

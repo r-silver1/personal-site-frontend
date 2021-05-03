@@ -14,6 +14,7 @@ import { GraphicsComponent } from './graphics/graphics.component';
 import { AiPortfolioComponent } from './ai-portfolio/ai-portfolio.component';
 import { WebPortfolioComponent } from './web-portfolio/web-portfolio.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { GuestsComponent } from './guests/guests.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     GraphicsComponent,
     AiPortfolioComponent,
     WebPortfolioComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    GuestsComponent
     
   ],
   imports: [
