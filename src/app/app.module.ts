@@ -15,6 +15,7 @@ import { AiPortfolioComponent } from './ai-portfolio/ai-portfolio.component';
 import { WebPortfolioComponent } from './web-portfolio/web-portfolio.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { GuestsComponent } from './guests/guests.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -36,7 +37,10 @@ import { GuestsComponent } from './guests/guests.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
+
     
   ],
   providers: [],
