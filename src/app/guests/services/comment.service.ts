@@ -4,22 +4,27 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { CommentGet } from '../interfaces/comment-get'
 
+let apiPath:string = 'http://backend.robertsilver.codes/api/comments';
+
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class CommentService {
+
 
   constructor(private http: HttpClient) { }
 
   getComments(): Observable<any> {
-    return this.http.get('http://localhost:3003/api/comments')
+    return this.http.get(apiPath)
     .pipe(map((res: any)=>{
       return res;
     }))
   }
 
   postComment(newComment: CommentGet): Observable<any> {
-    return this.http.post<object>('http://localhost:3003/api/comments', newComment)
+    return this.http.post<object>(apiPath, newComment)
     .pipe(map((res:any)=>{
       return res;
     }))
