@@ -1,0 +1,131 @@
+<div class="col col-11 shadow my-2 border mx-auto"
+    style="border-radius: 5px; background-color: rgba(52, 159, 221, 0.582);">
+    <h1 class="p-2 m-2 jumbotron mx-auto text-center"
+        style="background-color: rgba(255, 255, 255, 0.842); font-style: italic; font-weight: bold">
+        GUEST BOOK </h1>
+    <div class="container pt-2 pb-0">
+        <section class="card text-left mb-3 shadow p-4" style="color:grey; opacity: 75%;" align="center"
+            style="background-color: rgba(255, 255, 255, 0.842); font-size: calc(100% +.1vh); width: inherit !important">
+            <h3 style="font-style: italic">
+                Please sign my guest book!
+            </h3>
+            <br> 
+            <h6 style="color: grey; font-size: calc(100% +.1vh);">Leave your name and a friendly comment. email is optional but if you have an inquiry leave a way for me
+                to respond!</h6>
+            <hr>
+
+            <form class="col-8 mx-auto form-group" [formGroup]="commentForm" (ngSubmit)="sendComment()">
+                <div class="form-group row">
+                    <label for="name" class="text-nowrap text-center col-sm-4 col-form-label">
+                        <h4 style="color: grey; font-size: calc(100% +.1vh);">Name</h4>
+                    </label>
+                    <div class="col-sm-8">
+                        <input id="name" type="text" placeholder="Enter Name" class="form-control shadow"
+                            formControlName="name" [ngClass]="{ 
+                                'is-invalid': commentForm.get('name')?.touched && commentForm.get('name')?.invalid,
+                                'is-valid': commentForm.get('name')?.touched && commentForm.get('name')?.valid
+                            }" />
+                        <div class="invalid-feedback alert alert-danger mt-0 shadow" style="border-radius: 0 px 0px 5px 5px">
+                            <div *ngIf="commentForm.get('name')?.errors?.required">
+                                This field is required
+                            </div>
+                        </div>
+                        <div class="valid-feedback shadow">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="form-group row">
+                    <label for="email" class="text-nowrap text-center col-sm-4 col-form-label">
+                        <h4 style="color: grey; font-size: calc(100% +.1vh);">Email</h4>
+                    </label>
+                    <div class="col-sm-8">
+                        <input id="email" type="email" placeholder="Enter Email" class="form-control shadow"
+                            formControlName="email" [ngClass]="{ 
+                            'is-invalid': commentForm.get('email')?.touched && commentForm.get('email')?.invalid,
+                            'is-valid': commentForm.get('email')?.touched && commentForm.get('email')?.valid
+                        }" />
+                        <div class="alert alert-info mb-0 shadow">optional</div>
+                        <div class="invalid-feedback alert alert-danger mt-0 shadow" style="border-radius: 0 px 0px 5px 5px">
+                            <div *ngIf="commentForm.get('email')?.errors?.email">
+                                Invalid email format. Example: john@abc.com
+                                <br>
+                                (must include '@')
+                            </div>
+                        </div>
+                        <div class="valid-feedback">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="msg" class="text-nowrap text-center col-sm-4 col-form-label">
+                        <h4 style="color: grey; font-size: calc(100% +.1vh);">Comment</h4>
+                    </label>
+                    <div class="col-sm-8">
+                        <textarea id="msg" type="text" placeholder="Enter Comment" class="form-control shadow"
+                            formControlName="msg" [ngClass]="{ 
+                                'is-invalid': commentForm.get('msg')?.touched && commentForm.get('msg')?.invalid,
+                                'is-valid': commentForm.get('msg')?.touched && commentForm.get('msg')?.valid
+                            }">
+
+                        </textarea>
+                        <div class="invalid-feedback alert alert-danger mt-0 shadow" style="border-radius: 0 px 0px 5px 5px">
+                            <div *ngIf="commentForm.get('msg')?.errors?.required">
+                                This field is required
+                            </div>
+                        </div>
+                        <div class="valid-feedback">
+                        </div>
+                    </div>
+                    <div class="valid-feedback">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-10 offset-sm-8">
+                        <button type="submit" class="btn btn-primary shadow" [disabled]="!commentForm.valid">Post
+                            Comment</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+
+    </div>
+    <hr>
+</div>
+<div class="col col-11 shadow my-2 border mx-auto"
+    style="border-radius: 5px; background-color: rgba(52, 159, 221, 0.582);">
+
+    <div class="card mx-auto my-4 shadow text-left" style="background-color: rgba(255, 255, 255, 0.842)">
+        <div class="container p-2">
+            <h1 style="font-style: italic">
+                Guest Comments
+            </h1>
+            <hr>
+            <div class="col my-1 mx-auto" style="width: 100%">
+
+                <div class="card mx-auto my-4 shadow text-left" style="background-color: rgba(255, 255, 255, 0.842)"
+                    *ngFor="let comment of commentList.reverse()">
+                    <div class="container p-2">
+                        <h3 style="font-style: italic">
+                            {{comment.name}}
+                        </h3>
+                        <hr>
+                        <div class="row my-1 mx-auto" style="width: 100%">
+                            <div class="col col-9">
+                                <h4 style="color: grey; font-size: calc(100%)"></h4>
+                                <p class="lead  text-left" style="font-size: calc(90%)">
+                                    {{comment.createdOn | date}}
+                                </p>
+                                <p class="  text-left" style="font-size: calc(100%)">
+                                    {{comment.msg}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
