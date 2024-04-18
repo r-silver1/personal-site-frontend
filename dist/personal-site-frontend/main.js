@@ -904,8 +904,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// let apiPath:string = 'http://backend.robertsilver.codes/api/comments';
-let apiPath = "https://localhost:3003/api/comments";
+let apiPath = 'http://backend.robertsilver.codes/api/comments';
+// let apiPath:string = "https://localhost:3003/api/comments";
 class CommentService {
     constructor(http) {
         this.http = http;

@@ -4,8 +4,8 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { CommentGet } from '../interfaces/comment-get'
 
-// let apiPath:string = 'http://backend.robertsilver.codes/api/comments';
-let apiPath:string = "https://localhost:3003/api/comments";
+let apiPath:string = 'http://backend.robertsilver.codes/api/comments';
+// let apiPath:string = "https://localhost:3003/api/comments";
 
 @Injectable({
   providedIn: 'root'
